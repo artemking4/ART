@@ -105,6 +105,10 @@ namespace ART
 			return n;
 		}
 
+		inline Vec2_t operator - () const {
+			return *this * -1;
+		}
+
 		inline float Dot(const Vec2_t &v) const
 		{
 			return (this->X * v.X + this->Y * v.Y);
@@ -466,9 +470,9 @@ namespace ART
 
 		Vec3_t(const Vec3_t& other) : X(other.x), Y(other.y), Z(other.z) { };
 
-		Vec3_t(int x, int y, int z) : X((float)(x)), Y((float)(y)), Z((float)(z)) {};
+		Vec3_t(const int x, const int y, const int z) : X((float)(x)), Y((float)(y)), Z((float)(z)) {};
 
-		Vec3_t(float x, float y, float z) : X(x), Y(y), Z(z) {};
+		Vec3_t(const float x, const float y, const float z) : X(x), Y(y), Z(z) {};
 
 		Vec3_t() : X(0.f), Y(0.f), Z(0.f) {};
 
