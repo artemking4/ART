@@ -257,6 +257,12 @@ namespace ART
 			return *reinterpret_cast<ART::Matrix3x4_t *>(this);
 		}
 
+		Matrix4x4_t CopyNoTranslation() const {
+			auto copy = *this;
+			copy.As3x4().SetOrigin({ });
+			return copy;
+		}
+
 		Matrix4x4_t &operator+=(const Matrix4x4_t &matAdd)
 		{
 			for(u8 c = 0U; c < 4U; c++)
